@@ -40,5 +40,3 @@ print "prediction time:", round(time()-t1, 3), "s"
 accuracy = accuracy_score(labels_test, prediction)
 
 print 'Accuracy %s' % accuracy
-
-print features_train[:10]
