@@ -1,0 +1,19 @@
+### sklearn.naive_bayes.GaussianNB()
+training time: 1.351 s
+prediction time: 0.226 s
+Accuracy 0.973265073948
+
+### sklearn.svm.SVC(kernel='linear')
+training time: 242.682 s
+prediction time: 25.708 s
+Accuracy 0.984072810011
+
+### sklearn.tree.DecisionTreeClassifier
+training time: 124.796 s
+prediction time: 0.034 s
+Accuracy 0.976678043231
+
+# reduced the number of features to 1% of the email words
+training time: 8.249 s
+prediction time: 0.006 s
+Accuracy 0.966439135381
