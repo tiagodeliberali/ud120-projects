@@ -39,8 +39,13 @@ bumpy_slow = [features_train[ii][1] for ii in range(0, len(features_train)) if l
 #printData("classifySVC_linear_1.png", cl.classifySVC(features_train, labels_train, 'linear', 1.0))
 #printData("classifySVC_linear_1000.png", cl.classifySVC(features_train, labels_train, 'linear', 1000.0))
 
-printData("classifyDecisionTree_40.png", cl.classifyDecisionTree(features_train, labels_train, 40))
+#printData("classifyDecisionTree_40.png", cl.classifyDecisionTree(features_train, labels_train, 40))
 
+#printData("classifyKNeighborsClassifier_3.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 3))
+#printData("classifyKNeighborsClassifier_10.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 10))
+#printData("classifyKNeighborsClassifier_50.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 50))
 
-
+printData("classifyAdaBoostClassifier_50.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 50))
+printData("classifyAdaBoostClassifier_250.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 250))
+printData("classifyAdaBoostClassifier_500.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 500))
 
