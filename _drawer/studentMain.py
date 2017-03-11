@@ -45,7 +45,9 @@ bumpy_slow = [features_train[ii][1] for ii in range(0, len(features_train)) if l
 #printData("classifyKNeighborsClassifier_10.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 10))
 #printData("classifyKNeighborsClassifier_50.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 50))
 
-printData("classifyAdaBoostClassifier_50.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 50))
-printData("classifyAdaBoostClassifier_250.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 250))
-printData("classifyAdaBoostClassifier_500.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 500))
+#printData("classifyAdaBoostClassifier_50.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 50))
+#printData("classifyAdaBoostClassifier_250.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 250))
+#printData("classifyAdaBoostClassifier_500.png", cl.classifyAdaBoostClassifier(features_train, labels_train, 500))
+
+printData("classifyKNeighborsClassifier_1.png", cl.classifyKNeighborsClassifier(features_train, labels_train, 1))
 

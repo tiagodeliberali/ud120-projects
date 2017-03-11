@@ -48,6 +48,8 @@ def prettyPicture(clf, X_test, y_test, image_name):
     plt.title("Accuracy [%s]: %s" % (image_name, accuracy_score(y_test, clf.predict(X_test))))
 
     plt.savefig("results/" + image_name)
+
+    print "Accuracy [%s]: %s" % (image_name, accuracy_score(y_test, clf.predict(X_test)))
     
 import base64
 import json
