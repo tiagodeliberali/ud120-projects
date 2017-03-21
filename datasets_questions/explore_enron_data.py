@@ -19,4 +19,14 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+total_payments = 0
+total = 0
+
+for key, v in enron_data.items():
+    #if v['poi']:
+    if v['total_payments'] == 'NaN':
+        total_payments = total_payments + 1
+    total = total + 1
+        
+print 'total_payments: %s / total: %s' % (total_payments + 10, total + 10)
 
