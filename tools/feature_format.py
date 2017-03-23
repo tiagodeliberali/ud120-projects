@@ -74,6 +74,9 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
                 value = 0
             tmp_list.append( float(value) )
 
+        #CHANGE: ADDED KEY TO ARRAY
+        tmp_list.append(key)
+
         # Logic for deciding whether or not to add the data point.
         append = True
         # exclude 'poi' class as criteria.
