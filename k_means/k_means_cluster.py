@@ -48,8 +48,9 @@ data_dict.pop("TOTAL", 0)
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
 feature_2 = "exercised_stock_options"
+feature_3 = "total_payments"
 poi  = "poi"
-features_list = [poi, feature_1, feature_2]
+features_list = [poi, feature_1, feature_2, feature_3]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
@@ -58,15 +59,35 @@ poi, finance_features = targetFeatureSplit( data )
 ### you'll want to change this line to 
 ### for f1, f2, _ in finance_features:
 ### (as it's currently written, the line below assumes 2 features)
-for f1, f2 in finance_features:
+features = []
+min_f1 = 10000000.0
+max_f1 = 0.0
+min_f2 = 10000000.0
+max_f2 = 0.0
+
+for f1, f2, f3, _ in finance_features:
     plt.scatter( f1, f2 )
+    features.append((f1, f2))
+    if f2 != 'NaN' and float(f2) != 0 and float(f2) < min_f2:
+        min_f2 = float(f2)
+    if f2 != 'NaN' and float(f2) > max_f2:
+        max_f2 = float(f2)
+
+    if f2 != 'NaN' and float(f1) != 0 and float(f1) < min_f1:
+        min_f1 = float(f1)
+    if f2 != 'NaN' and float(f1) > max_f1:
+        max_f1 = float(f1)
+
+print 'salary:                  Min: %s - Max: %s' % (min_f1, max_f1)
+print 'exercised_stock_options: Min: %s - Max: %s' % (min_f2, max_f2)
+
 plt.show()
 
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
-
-
-
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=2, random_state=0).fit(features)
+pred = kmeans.predict(features)
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
