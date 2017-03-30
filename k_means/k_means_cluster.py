@@ -81,6 +81,9 @@ for f1, f2, f3, _ in finance_features:
 print 'salary:                  Min: %s - Max: %s' % (min_f1, max_f1)
 print 'exercised_stock_options: Min: %s - Max: %s' % (min_f2, max_f2)
 
+print float(200000 - min_f1) / (max_f1 - min_f1)
+print float(1000000 - min_f2) / (max_f2 - min_f2)
+
 plt.show()
 
 ### cluster here; create predictions of the cluster labels
